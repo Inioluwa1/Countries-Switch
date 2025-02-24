@@ -1,0 +1,32 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 2.5%;
+    box-shadow: 0px 4px rgba(199, 192, 192, 0.4);
+}
+.headerContainer.dark{
+    background-color: rgb(43, 57, 69);
+    color: white;
+    box-shadow: none;
+}
+.headerContainer h1{
+    font-weight: 900;
+    font-size: 2.4rem;
+}
+
+.darkMode{ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.moon{ 
+    margin: 0 10px;
+}
+.moon2{
+    margin: 0 10px;
+    color:white;
+}
+
+
