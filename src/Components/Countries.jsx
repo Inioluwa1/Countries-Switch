@@ -2,27 +2,19 @@ import React, { useEffect, useState } from 'react'
 import CountryCard from './CountryCard'
 import './Countries.css'
 
-export default function Countries({darkModeSet, setdarkModeSet}) {
-    const [countries, setCountries] = useState([])
+export default function Countries({darkModeSet, setdarkModeSet, selectedRegion, countries, setCountries}) {
 
+    //call the API and display all countries on mount
     useEffect(() => {
         async function fetchCountries() {
             const response =  await fetch("https://restcountries.com/v3.1/all")
             const country = await response.json()
-            console.log(country)
-            setCountries(country)
             setdarkModeSet(false)
+            setCountries(country)
+            // console.log(country)
         }
         fetchCountries() 
     }, [])
-
-    const getCountries = async () => {
-        try{
-
-        } catch(error) {
-            console.log("Error fetching data;", error)
-        }
-    }
 
   return (
     <div className='countryContainer'>
