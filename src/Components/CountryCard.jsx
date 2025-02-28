@@ -1,10 +1,16 @@
 import React from 'react'
 import './CountryCard.css'
 
-export default function CountryCard({indcountry, darkModeSet}) {
+export default function CountryCard({indcountry, darkModeSet, navigate, setSearch}) {
+
+  const handleNavigation = () => {
+    navigate('./country', { state: {indcountry}})
+    setSearch(false)
+  }
+
   return (
-    <div className={`Countrycard ${darkModeSet? "dark" : ""} `}>
-      <img src={indcountry.flags.png} alt={indcountry.name.common} className={`countryImage ${darkModeSet? "dark" : ""}`} />
+    <div className={`Countrycard ${darkModeSet? "dark" : ""} `} onClick={handleNavigation} >
+      <img src={indcountry.flags.png} alt={indcountry.flags.alt} className={`countryImage ${darkModeSet? "dark" : ""}`} />
       <div className={`detailscontainer ${darkModeSet? "dark" : ""}`}>
         <h1> {indcountry.name.common} </h1>
         <div className='details'>

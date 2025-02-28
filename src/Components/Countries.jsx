@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import CountryCard from './CountryCard'
 import './Countries.css'
 
-export default function Countries({darkModeSet, setdarkModeSet, selectedRegion, countries, setCountries}) {
+export default function Countries({darkModeSet, setdarkModeSet, selectedRegion, countries, setCountries, setSearch}) {
+    const navigate = useNavigate()
 
     //call the API and display all countries on mount
     useEffect(() => {
@@ -20,7 +22,7 @@ export default function Countries({darkModeSet, setdarkModeSet, selectedRegion, 
     <div className='countryContainer'>
       {countries.map((indcountry, index) => (
         <div key={index}> 
-            <CountryCard indcountry={indcountry} darkModeSet={darkModeSet} />
+            <CountryCard indcountry={indcountry} darkModeSet={darkModeSet} navigate={navigate} setSearch={setSearch} />
         </div>
       ))}
     </div>
