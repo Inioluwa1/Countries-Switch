@@ -80,3 +80,52 @@
     border-radius: 5px;
     box-shadow: 2px 2px 5px grey, -2px -2px 5px grey;
 }
+
+@media screen and (max-width:450px) {
+    .backButton{
+        margin: 10% 0 15% 0;
+    }
+    .Details{
+        flex-direction: column;
+        height: auto;
+    }
+    .flag{
+        width: 100%
+    }
+    .flag img{
+        width: 100%;
+        height: 250px;
+    }
+    .NameDetails{
+        width: 100%;
+    }
+    .DetailsInfo{
+        flex-direction: column;
+    }
+    .iDetails{
+        width: 100%;
+        margin-bottom: 5%;
+        /* border: 3px solid; */
+    }
+    .iDetails p{
+        margin-bottom: 2%;
+    }
+    .oDetails{
+        width: 100%;
+    }
+    .oDetails p{
+        margin-bottom: 2%;
+    }
+    .BorderCountries{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .border{
+        width: 100%;
+        display: flex;
+        /* border: 3px solid; */
+    }
+    .bordercountry{
+        margin: 2% 2%;
+    }
+}

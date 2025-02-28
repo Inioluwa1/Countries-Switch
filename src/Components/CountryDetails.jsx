@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { FaArrowLeftLong } from "react-icons/fa6";
 import './CountryDetails.css'
 
-export default function CountryDetails() {
+export default function CountryDetails({setSearch}) {
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -11,6 +11,7 @@ export default function CountryDetails() {
 
   const goBackHome = () => {
     navigate('/')
+    setSearch(true)
     // console.log('Navigating back to home page')
   }
 
@@ -32,7 +33,7 @@ export default function CountryDetails() {
         <div className='NameDetails'>
           <h1 className='Countryname'> {country?.name.common} </h1>
           <div className='DetailsInfo'>
-            <div className=''>
+            <div className='iDetails'>
               <p> <strong> Native name: </strong> {(country?.altSpellings[0])} </p>
               <p> <strong> Population: </strong> {country?.population} </p>
               <p> <strong> Region: </strong> {country?.region} </p>
@@ -40,14 +41,14 @@ export default function CountryDetails() {
               <p> <strong> Capital: </strong> {country?.capital} </p>
             </div>
             <div className='oDetails'>
-              <span> <strong> Top Level Domain: </strong> </span>
+              <p> <span> <strong> Top Level Domain: </strong> </span>
               {Object.entries(country?.tld).map(([tldname, tldvalue], index) => (
                 <span key={index}> {tldvalue} </span> 
-              ))} <br></br>
-              <span> <strong> Currencies: </strong> </span> 
+              ))} </p> 
+              <p> <span> <strong> Currencies: </strong> </span> 
               {Object.entries(country?.currencies).map(([currencyname, currencyvalue], index) => (
                 <span key={index}> {currencyvalue.name} </span>
-              ))} <br></br>
+              ))} </p>
               <span> <strong> Languages: </strong></span>
               {Object.entries(country?.languages).map(([languagename, languagevalue], index) => (
                 <span key={index}> {languagevalue} </span>
@@ -56,9 +57,11 @@ export default function CountryDetails() {
           </div>
           <div className='BorderCountries' >
             <p> <strong>Border Countries: </strong> </p>
+            <div className='border'>
             {country.borders? country?.borders.map((border, index) => (
               <p className='bordercountry' key={index}> {border} </p>
-            )) : <p className='bordercountry'> No border countries available to display </p> }
+            )) : <p className='bordercountry'> No border countries available to display </p> } 
+            </div>
           </div>
         </div>
       </div>      

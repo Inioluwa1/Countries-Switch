@@ -67,3 +67,24 @@
     background-color: rgb(43, 57, 69);
     color: white;
 }
+
+@media screen and (max-width:450px){
+    .searchContainer{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .search{
+        width: 100%;
+        margin-bottom: 3%;
+    }
+    .input{
+        font-size: 1.4rem
+    }
+    .selectRegionContainer{
+        width: 100%;
+    }
+    .selectRegion{
+        font-size: 1.4rem
+    }
+}

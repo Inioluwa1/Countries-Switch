@@ -37,7 +37,9 @@ function App() {
                                       setCountries={setCountries}
                                       setSearch={setSearch} 
                                     />} />
-          <Route path='/country' element={<CountryDetails />} />
+          <Route path='/country' element={<CountryDetails 
+                                        setSearch={setSearch}
+                                    />} />
         </Routes>
       </Router>
       </div>

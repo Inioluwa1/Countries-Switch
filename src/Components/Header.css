@@ -29,4 +29,8 @@
     color:white;
 }
 
-
+@media screen and (max-width: 450px){
+    .headerContainer h1{
+        font-size: 1.2rem
+    }
+}
